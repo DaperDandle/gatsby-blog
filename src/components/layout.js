@@ -1,31 +1,51 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import {
   navFooter,
   link,
   container,
   heading,
 } from "../components/layout.module.css";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Layout = ({ title, children }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
   return (
     <>
-      <nav className={navFooter}>
-        <ul style={{ listStyle: "none" }}>
-          <li>
-            <Link to="/" className={link}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={link}>
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <title>
+        {data.site.siteMetadata.title} | {title}
+      </title>
+
+      <ul className={navFooter} style={{ listStyle: "none" }}>
+        <li>
+          <StaticImage src="../images/logo.png" style={{ width: "100px" }} />
+        </li>
+        <li>
+          <Link to="/" className={link}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className={link}>
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/blog" className={link}>
+            Blog Posts
+          </Link>
+        </li>
+      </ul>
+
       <main className={container}>
-        <title>{title}</title>
         <h1 className={heading}>{title}</h1>
         {children}
       </main>
