@@ -10,19 +10,19 @@ import {
 import { StaticImage } from "gatsby-plugin-image";
 
 const Layout = ({ title, children }) => {
-  // const data = useStaticQuery(graphql`
-  //   {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
   return (
     <>
       <title>
-        {/* {data.site.siteMetadata.title} */}| {title}{" "}
+        {data.site.siteMetadata.title} | {title}{" "}
       </title>
 
       <ul className={nav} style={{ listStyle: "none" }}>

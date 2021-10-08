@@ -3,8 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: linear-gradient(to right, rebeccapurple, white);
-  color: black;
+  background-color: rebeccapurple;
   padding: 1rem 4rem;
   width: 90%;
 }
@@ -14,14 +13,14 @@
   display: flex;
   align-items: center;
   background-color: rebeccapurple;
-  color: black;
+  color: white;
   padding: 1rem 4rem;
   width: 90%;
 }
 
 .link {
   display: block;
-  color: black;
+  color: white;
   text-decoration: none;
   padding-left: 2rem;
 }

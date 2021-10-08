@@ -5,12 +5,13 @@ import { StaticImage } from "gatsby-plugin-image";
 // markup
 const IndexPage = () => {
   return (
-    <Layout title="Home Page">
+    <Layout title="Ned Flander's Blog">
       <h1>Welcome to my Gatsby Site</h1>
 
-      <StaticImage src="../images/nice-guy.jpg" alt="some guy" />
+      <StaticImage src="../images/nice-guy.jpg" alt="Ned Flanders" />
 
-      <p>I'm making this following the Gatsby tutorial!</p>
+      <p>Well hi there, it's positutely wonderful to see you!</p>
+      <p>Come on in and check out my blog!</p>
     </Layout>
   );
 };
